@@ -16,7 +16,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -28,6 +27,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['http://pashaideas.herokuapp.com/']
 
+# import dj_database_url
+
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 # Application definition
 
@@ -81,6 +84,10 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
