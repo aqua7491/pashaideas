@@ -25,6 +25,15 @@
     <![endif]-->
   </head>
   <body>
+    {% if massages %}
+        <div class="alert alert-warning">
+        <div class='container'>
+          {% for message in massages %}
+            {{ message }}<br/>
+          {% endfor %}
+        </div>
+        </div>
+    {% endif %}
     {% block content %}
 
     {% endblock content %}
