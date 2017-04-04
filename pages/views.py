@@ -18,7 +18,7 @@ class HomeView(SuccessMessageMixin, CreateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
-        context['page_obj'] = Page.objects.filter(featured=True).first()
+        context['object'] = Page.objects.filter(featured=True).first()
         return context
     # def form_valid(self, form):
     #     email = form.cleaned_data.get("email")
@@ -28,4 +28,4 @@ class HomeView(SuccessMessageMixin, CreateView):
 class PageDetailView(DetailView):
     queryset = Page.objects.filter(active=True)
     model = Page
-    
+    template_name = 'pages/home.html'
